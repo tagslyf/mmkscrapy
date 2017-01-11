@@ -19,3 +19,7 @@ class DoubanspiderSpider(CrawlSpider):
         #i['name'] = response.xpath('//div[@id="name"]').extract()
         #i['description'] = response.xpath('//div[@id="description"]').extract()
         return i
+
+    def parse(self, response):
+        sel = Selector(response)
+        print(sel.xpath('//div[class="list"]'))
